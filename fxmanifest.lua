@@ -6,7 +6,7 @@ games {
   "rdr3"
 }
 
-ui_page 'web/index.html'
+ui_page 'web/build/index.html'
 
 client_script "client/**/*"
 server_script "config.lua"

@@ -1,0 +1,518 @@
+@import url('https://fonts.googleapis.com/css?family=Barlow:300,400,500,600,700');
+* {
+    padding: 0;
+    margin: 0;
+    user-select: none;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease-in-out;
+}
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.nui-wrapper {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(28.59% 50.83% at 0.83% 108.15%, rgba(255, 201, 84, 0.05) 0%, rgba(27, 19, 15, 0) 100%) 
+   , radial-gradient(28.07% 49.91% at 100% 56.25%, rgba(255, 153, 0, 0.104) 0%, rgba(0, 0, 0, 0) 100%), radial-gradient(23.91% 42.5% at 25.62% 0%, rgba(255, 254, 175, 0.2) 0%, rgba(0, 0, 0, 0) 100%) 
+   , radial-gradient(71.4% 75.28% at 50% 50%, rgba(20, 18, 14, 0) 63.15%, #14100e 88.74%), radial-gradient(50% 50% at 50% 50%, rgba(27, 22, 15, 0.9) 0%, rgba(20, 18, 14, 0.95) 100%);
+}
+.InsideContainer {
+    height: 72vh;
+    width: 70vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+}
+.InsideContainer > .upperHeader {
+    height: 14vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5vw;
+}
+.boxHeaderThing {
+    height: 9vh;
+    width: 4.5vw;
+    background: rgba(255, 255, 255, 0.08);
+    border: 0.1vw solid rgba(255, 255, 255, 0.59);
+    border-radius: 0.8rem;
+    transform: rotate(15deg);
+}
+.InsideContainer > .upperHeader > .part > span {
+    display: flex;
+    flex-direction: column;
+}
+.InsideContainer > .upperHeader > .part > span > .boxHeaderThing:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.InsideContainer > .upperHeader > .part > span > .boxHeaderThing:first-child > img {
+    transform: rotate(-15deg) !important;
+    height: 6.5vh;
+}
+.InsideContainer > .upperHeader > .part > span > .boxHeaderThing:last-child {
+    margin-top: -4.6vw;
+    margin-left: 0.3vw;
+}
+.ButtonsNav {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+    width: 100%;
+}
+.ButtonsNav > .navSpan {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.7vw;
+    height: 4.5vh;
+    border-radius: 0.3rem;
+    width: fit-content;
+    padding-left: 1.2vw;
+    padding-right: 1vw;
+    background: rgba(255, 255, 255, 0.03);
+    transition: 0.2s all;
+}
+.ButtonsNav > .navSpan > button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-family: Barlow;
+    font-weight:400;
+    font-size: calc(8px + 0.4vw);
+    color: rgba(255, 255, 255, 0.24);
+}
+.ButtonsNav > .navSpan > img {
+    height: 2vh;
+    width: auto;
+    opacity: 0.2;
+}
+.SelectedButton {
+    background-color: #54FFA3 !important;
+}
+.SelectedButton > button {
+    color: black !important;
+}
+.SelectedButton > img {
+    opacity: 1 !important;
+}
+.ChosenPage {
+    width: 100%;
+}
+.EmployeePage {
+    display: flex;
+    flex-direction: row;
+    gap: 2vw;
+   /* background-color: red;
+    */
+    height: 58vh;
+    width: 66vw;
+}
+.employeesList {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    max-height: 100vw;
+    overflow: auto;
+}
+.employeesList > div {
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    max-height: 32vw;
+    padding-right: 0.4vw;
+}
+.employeesList > span {
+    color: white;
+    font-family: Barlow;
+    font-weight: 500;
+    font-size: calc(8px + 0.4vw);
+    width: 100%;
+}
+.employeeListRow{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: calc(55px + 0.4vw);
+    width: 100%;
+    height: 5vh;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 0.14vw solid rgba(255, 255, 255, 0.05);
+    min-height: 3vw;
+}
+.employeeListRow > span {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    width: 15vw;
+    font-family: Barlow;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.7);
+}
+.employeeListRow > span > form > select {
+    background: rgba(255, 255, 255, 0.08);
+    width: 6.5vw;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 0.22vw;
+    border-radius: 0.3rem;
+    border: 0.1vw solid rgba(255, 255, 255, 0.07);
+    outline: none;
+    font-family: Barlow;
+    font-weight: 400;
+    font-size: calc(5px + 0.4vw);
+}
+select > option {
+    background: grey;
+}
+.salaryInput {
+    background: rgba(55, 206, 115, 0.09);
+    border: 0.1vw solid rgba(63, 227, 128, 0.15);
+    height: 2.7vh;
+    width: 7.5vw;
+    padding-left: 0.6vw;
+    border-radius: 0.2rem;
+    color: #24DD7A;
+    font-family: Barlow;
+    font-weight: 500;
+    outline: none;
+}
+.employeesInvite {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.04);
+    border: 0.12vw solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.5rem;
+    padding-bottom: 1.5vw;
+    display: flex;
+    gap: 1vw;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 90;
+}
+.employeesInvite > button {
+    margin-top: 1vw;
+    height: 4vh;
+    border-radius: 0.5rem;
+    color: #53ADDE;
+    font-weight: 500;
+    font-family: Barlow;
+    font-size: calc(9px + 0.4vw);
+    background: rgba(0, 163, 255, 0.2);
+    width: 92%;
+    border: 0.1vw solid rgba(0, 163, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.inviteRow {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1.2vw;
+}
+.inviteRow > span {
+    display: flex;
+    padding-top: 1vw;
+    padding-left: 1vw;
+    flex-direction: column;
+    width: 50%;
+    padding-right: 1vw;
+    color: white;
+    font-family: Barlow;
+    font-weight: 500;
+    font-size: calc(7px + 0.4vw);
+    gap: 0.4vw;
+}
+.inviteRow > span > form > select {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.12vw solid rgba(255, 255, 255, 0.17);
+    padding: 0.2vw;
+    border-radius: 0.4rem;
+    padding-top: 0.5vw;
+    padding-bottom: 0.5vw;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: Barlow;
+    font-weight: 500;
+    outline: none;
+}
+.salaryInputInvite {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    gap: 0.2vw;
+    align-items: center;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.12vw solid rgba(255, 255, 255, 0.17);
+    height: 3.8vh;
+    border-radius: 0.4rem;
+    font-family: Barlow;
+    font-weight: 600;
+    font-size: calc(5.5px + 0.4vw);
+    color: #31DD80 ;
+    padding-left: 0vw;
+    outline: none;
+}
+.salaryInputInvite input {
+    font-family: Barlow;
+    font-weight: 600;
+    font-size: calc(5.5px + 0.4vw);
+    color: #31DD80 ;
+    outline: none;
+    background-color: transparent;
+    border: none;
+}
+.BusinessPart {
+    height: 58vh;
+    width: 66vw;
+    display: flex;
+    flex-direction: row;
+    gap: 3vw;
+}
+.BusinessPart > .BusinessPartSide {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 1vw;
+    z-index: 100 !important;
+}
+.BusinessBox {
+    z-index: 90;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6vw;
+    padding-top: 1vw;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    width: 100%;
+    height: 20vh;
+    border-radius: 0.3rem;
+    border: 0.12vw solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.04);
+}
+.BusinessBoxHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    color: white;
+    font-family: Barlow;
+    margin-top: -1vw;
+}
+.BusinessBoxHeader span {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1vw;
+}
+.BusinessBoxHeader h1 {
+    font-size: calc(15px + 0.4vw);
+    font-weight: 700;
+}
+.BusinessBoxHeader p {
+    font-family: Barlow;
+    font-size: calc(8px + 0.4vw);
+    font-weight: 200;
+    color: rgba(255, 255, 255, 0.6);
+}
+.BusinessBoxAmount {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: end;
+    padding-bottom: 1vw;
+    justify-content: start;
+    float: right;
+    font-size: calc(32px + 0.4vw);
+    font-family: Barlow;
+    font-weight: 600;
+    color: #27D16B;
+}
+.BusinessBox .businessDollarImg{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 19.6vh;
+    opacity: 0.3;
+    margin-top: -1vw;
+    margin-left: 21vw;
+}
+.TransactionList {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+    gap: 0.5vw;
+    width: 100%;
+    max-height: 25vw;
+    overflow-x: auto;
+    padding-right: 0.2vw;
+}
+.TransactionRow {
+    display: flex;
+    flex-direction: row;
+    min-height: 5vh;
+    width: 100%;
+    justify-content: space-between;
+    font-family: Barlow;
+    font-weight: 500;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 0.4rem;
+    border: 0.14vw solid rgba(255, 255, 255, 0.05);
+}
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.numInput {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    font-family: Barlow;
+    font-weight: 500;
+    height: 4.5vh;
+    font-size: calc(7px + 0.4vw);
+    text-align: center;
+    border-radius: 0.4em;
+    border: 0.1vw solid rgba(255, 255, 255, 0.15);
+    outline: none;
+    color: rgba(255, 255, 255, 0.836);
+}
+.ActionButton {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    font-family: Barlow;
+    font-weight: 500;
+    height: 4.5vh;
+    font-size: calc(7px + 0.4vw);
+    text-align: center;
+    border-radius: 0.4em;
+    border: 0.1vw solid rgba(255, 255, 255, 0.15);
+}
+::-webkit-scrollbar {
+    width: 0.2vw;
+}
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.06);
+}
+::-webkit-scrollbar-thumb {
+    background: #545454;
+    border-radius: 0.2rem;
+}
+.backTexture {
+    position: absolute;
+    top: 6vw;
+    left: 0.2vw;
+    z-index: 1 !important;
+}
+.backTexture > img {
+    height: 88vh;
+    width: auto;
+}
+.backTexture2 {
+    position: absolute;
+    top: 0vw;
+    left: 63.5vw;
+    z-index: 1 !important;
+}
+.backTexture2 > img {
+    height: 50vh;
+    width: auto;
+}
+.DialogPop {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 150;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.DialogDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 22.5vh;
+    width: 28vw;
+    border-radius: 1rem;
+    background: radial-gradient(71.4% 75.28% at 50% 50%, rgba(20, 18, 14, 0) 63.15%, #13140e 88.74%), radial-gradient(50% 50% at 50% 50%, rgba(38, 34, 22, 0.9) 0%, rgba(20, 18, 14, 0.95) 100%);
+    border: 0.15vw solid rgba(255, 255, 255, 0.08);
+}
+.DialogHeader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5vh;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 0.4rem 0.4rem 0 0;
+}
+.DialogHeader h1 {
+    font-family: Barlow;
+    font-weight: 500 !important;
+    color: rgba(255, 255, 255, 0.42);
+    font-size: calc(7px + 0.4vw);
+    text-decoration: double;
+    text-transform: uppercase;
+}
+.DialogContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.4vw;
+    height: 14vh;
+    width: 100%;
+    font-weight: 400;
+    font-family: Barlow;
+    color: rgba(255, 255, 255, 0.58);
+}
+.DialogContent h1 {
+    font-weight: 600;
+    font-size: calc(11.5px + 0.4vw);
+}
+.DialogContent p {
+    width: 85%;
+    font-size: calc(9px + 0.4vw);
+    text-align: center;
+}
+.DialogActions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.21vw;
+    height: 6vh;
+    width: 100%;
+    padding-bottom: 1.8vw;
+}
+.DialogActions button {
+    width: 10vw;
+    height: 3.3vh;
+    outline: none;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.57);
+    font-family: Barlow;
+    font-weight: 400;
+    font-size: calc(7px + 0.4vw);
+    border-radius: 0.3rem;
+}
